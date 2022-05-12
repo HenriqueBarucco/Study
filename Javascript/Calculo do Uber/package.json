@@ -1,0 +1,10 @@
+{
+    "name": "calculodouber",
+    "version": "1.0.0",
+    "description": "teste de calculo de uber",
+    "scripts": {
+      "lite": "lite-server --port 8000",
+      "start": "index.html"
+    }
+  }
+  

@@ -1,0 +1,9 @@
+{
+  "name": "calculadora2grau",
+  "version": "1.0.0",
+  "description": "teste de 2 grau",
+  "scripts": {
+    "lite": "lite-server --port 8000",
+    "start": "index.html"
+  }
+}
