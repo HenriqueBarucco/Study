@@ -2,4 +2,7 @@
 
 .vscode/
 
+.idea/
+.out/
+
 *.lnk
