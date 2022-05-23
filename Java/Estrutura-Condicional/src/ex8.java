@@ -19,5 +19,7 @@ public class ex8 {
             juros = (valor-4500.00)*0.28+1500*0.18+1000*0.08;
             System.out.printf("R$ %.2f", juros);
         }
+
+        sc.close();
     }
 }
