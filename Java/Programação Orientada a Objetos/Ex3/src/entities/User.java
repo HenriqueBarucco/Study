@@ -11,11 +11,6 @@ public class User {
     }
 
     public String status(){
-        if(notaTotal() >= 60){
-            return "PASS";
-        } else {
-            double missing = 60-notaTotal();
-            return "FAILED\nMISSING " + String.format("%.2f", missing) + " POINTS";
-        }
+        return (notaTotal() >= 60) ? "PASS" : "FAILED\nMISSING " + String.format("%.2f", 60-notaTotal()) + " POINTS";
     }
 }
