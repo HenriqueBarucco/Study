@@ -4,25 +4,25 @@
 em uma das seguintes categorias: */
 void main()
 {
-    int idade;
+    int age;
     char *class;
 
     printf("Insira a idade do nadador para ser classificado: ");
-    scanf("%d", &idade);
+    scanf("%d", &age);
 
-    if (idade <= 4)
+    if (age <= 4)
         return printf("Nadador sem idade suficiente para ter uma classificacao!");
 
-    if (idade >= 5 && idade <= 7)
+    if (age >= 5 && age <= 7)
         class = "Infantil A";
 
-    else if (idade >= 8 && idade <= 10)
+    else if (age >= 8 && age <= 10)
         class = "Infantil B";
 
-    else if (idade >= 11 && idade <= 13)
+    else if (age >= 11 && age <= 13)
         class = "Juvenil A";
 
-    else if (idade >= 14 && idade <= 17)
+    else if (age >= 14 && age <= 17)
         class = "Juvenil B";
 
     else
