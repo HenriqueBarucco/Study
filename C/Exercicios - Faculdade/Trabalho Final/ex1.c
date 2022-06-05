@@ -1,17 +1,18 @@
 #include <stdio.h>
 
-/* Escreva um programa que, dada a idade de um nadador, classifique-o 
+/* Escreva um programa que, dada a idade de um nadador, classifique-o
 em uma das seguintes categorias: */
 void main()
 {
     int age;
     char *class;
 
-    printf("Insira a idade do nadador para ser classificado: ");
-    scanf("%d", &age);
-
-    if (age <= 4)
-        return printf("Nadador sem idade suficiente para ter uma classificacao!");
+    do
+    {
+        printf("Insira a idade do nadador para ser classificado: ");
+        scanf("%d", &age);
+        fseek(stdin, 0, SEEK_END);
+    } while (age <= 4);
 
     if (age >= 5 && age <= 7)
         class = "Infantil A";
