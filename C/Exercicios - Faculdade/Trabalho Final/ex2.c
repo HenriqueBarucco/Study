@@ -18,7 +18,7 @@ estacionamento. Admite-se que a chegada e a partida se dão com
 intervalo não superior a 24 horas. Portanto, se uma dada hora de
 chegada for superior à da partida, isso não é uma situação o de erro,
 antes significará que a partida ocorreu no dia seguinte ao da chegada. */
-int main()
+void main()
 {
     int arrive[2],
         left[2],
@@ -39,7 +39,7 @@ int main()
         scanf("%d%d", &left[0], &left[1]);
     } while (left[0] > 23 || left[1] > 59);
 
-    if (arrive[0] <= left[0] && arrive[1] <= left[1]) // Hora e minuto de chegada menor que hora e minuto de saida
+    if (arrive[0] <= left[0] && arrive[1] < left[1]) // Hora e minuto de chegada menor que hora e minuto de saida
     {
         stay[0] = left[0] - arrive[0];
         stay[1] = (left[1] - arrive[1]);
@@ -56,14 +56,14 @@ int main()
         stay[1] = 60 - (arrive[1] - left[1]);
         stay[0] -= 1;
     }
-    else if (arrive[0] > left[0] && arrive[1] <= left[1]) // Hora maior que hora de saida e minuto de chegada menor que minuto de saida
+    else if (arrive[0] >= left[0] && arrive[1] <= left[1]) // Hora maior que hora de saida e minuto de chegada menor que minuto de saida
     {
         stay[0] = (left[0] - arrive[0]) + 24;
         stay[1] = (left[1] - arrive[1]);
     }
 
     stayMinutes = stay[0] * 60 + stay[1];
-    float hoursStayed = ceil(stayMinutes/60);
+    float hoursStayed = ceil(stayMinutes / 60);
 
     if (hoursStayed <= 2) // 1ª e 2ª Hora
         payment = hoursStayed * 2.0;
