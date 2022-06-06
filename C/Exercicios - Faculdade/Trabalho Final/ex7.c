@@ -19,27 +19,7 @@ desenho fica a critério de vocês) */
 Programa para agendamento de salão de cabeleleiro, no qual guarda o nome do cliente, o horario marcado e
 permite a escolha entre três serviços oferecidos pelo salão (corte, pintura e alisamento), podendo fazer mais de uma coisa
 e apresentando metados de pagamentos com descontos e no encerramento do programa é apresentado um desenho.
-
-Regras de negocio customizáveis!
-
-4 variaveis int
-6 variaveis double
-1 struct com 1 variavel char e 3 int
-
-3 operações de porcentagens diferentes (valores de descontos)
-4 operações matematicas
-    - 18 *
-    - 10 +
-    - 9 -
-    - 9 /
-Armazenamento de string em "user.name"
-
-8 - For's
-8 - Do While's
-3 - While's
-23 - If e Else's
-
-Desenho de um coração no final do projeto em uma função
+Desenho de um coração no final do projeto <3
 */
 
 struct user
@@ -53,11 +33,10 @@ struct user
 void main()
 {
     int esc,
-        back,
-        productAdd = 4,
         paymentOption = 0;
 
-    double totalPrice,
+    double 
+        totalPrice,
         cashDiscount = 10.0,
         pixDiscount = 15.0,
         cardDiscount = 5.0,
@@ -94,36 +73,8 @@ void main()
                 scanf("%d%d", &user.time[0], &user.time[1]);
             } while (user.time[0] > 23 || user.time[1] > 59);
 
-            while (productAdd != 0)
-            {
-                system("@cls||clear");
-                printf("Escolha o que fazer no salao: \n");
-                (user.product[0] == 1) ? printf("[1] Corte (ADICIONADO)\n") : printf("[1] Corte (NAO ADICIONADO)\n");
-                (user.product[1] == 1) ? printf("[2] Pintura (ADICIONADO)\n") : printf("[2] Pintura (NAO ADICIONADO)\n");
-                (user.product[2] == 1) ? printf("[3] Alisamento (ADICIONADO)\n\n") : printf("[3] Alisamento (NAO ADICIONADO)\n\n");
-                printf("[0] Continuar\n");
+            productAdd(user.product);
 
-                scanf("%d", &productAdd);
-
-                if (productAdd == 1)
-                    if (user.product[0] == 1)
-                        user.product[0] = 0;
-                    else
-                        user.product[0] = 1;
-
-                else if (productAdd == 2)
-                    if (user.product[1] == 1)
-                        user.product[1] = 0;
-                    else
-                        user.product[1] = 1;
-
-                else if (productAdd == 3)
-                    if (user.product[2] == 1)
-                        user.product[2] = 0;
-                    else
-                        user.product[2] = 1;
-            }
-            productAdd = 4;
             user.used = 1;
         }
         else if (esc == 2)
@@ -139,71 +90,18 @@ void main()
                 (user.product[1] == 1) ? printf("- Pintura\n") : NULL;
                 (user.product[2] == 1) ? printf("- Alisamento\n") : NULL;
 
-                do
-                {
-                    printf("\n[0] - Voltar\n");
-                    scanf("%d", &back);
-                } while (back != 0);
+                backScreen();
             }
             else
-            {
-                system("@cls||clear");
-                printf("Nenhum cliente foi cadastrado!");
-
-                do
-                {
-                    printf("\n[0] - Voltar\n");
-                    scanf("%d", &back);
-                } while (back != 0);
-            }
+                noUser();
         }
 
         else if (esc == 3)
         {
             if (user.used != 0)
-            {
-                while (productAdd != 0)
-                {
-                    system("@cls||clear");
-                    printf("Escolha o que fazer no salao: \n");
-                    (user.product[0] == 1) ? printf("[1] Corte (ADICIONADO)\n") : printf("[1] Corte (NAO ADICIONADO)\n");
-                    (user.product[1] == 1) ? printf("[2] Pintura (ADICIONADO)\n") : printf("[2] Pintura (NAO ADICIONADO)\n");
-                    (user.product[2] == 1) ? printf("[3] Alisamento (ADICIONADO)\n\n") : printf("[3] Alisamento (NAO ADICIONADO)\n\n");
-                    printf("[0] Continuar\n");
-
-                    scanf("%d", &productAdd);
-
-                    if (productAdd == 1)
-                        if (user.product[0] == 1)
-                            user.product[0] = 0;
-                        else
-                            user.product[0] = 1;
-
-                    else if (productAdd == 2)
-                        if (user.product[1] == 1)
-                            user.product[1] = 0;
-                        else
-                            user.product[1] = 1;
-
-                    else if (productAdd == 3)
-                        if (user.product[2] == 1)
-                            user.product[2] = 0;
-                        else
-                            user.product[2] = 1;
-                }
-                productAdd = 4;
-            }
+                productAdd(user.product);
             else
-            {
-                system("@cls||clear");
-                printf("Nenhum cliente foi cadastrado!");
-
-                do
-                {
-                    printf("\n[0] - Voltar\n");
-                    scanf("%d", &back);
-                } while (back != 0);
-            }
+                noUser();
         }
 
         else if (esc == 4)
@@ -224,57 +122,27 @@ void main()
                 {
                     totalPrice = 0.0;
                     if (paymentOption == 1)
-                    {
-                        totalPrice += (user.product[0] * haircutPrice) * (1.0 - (cashDiscount / 100.00));
-                        totalPrice += (user.product[1] * dyehairPrice) * (1.0 - (cashDiscount / 100.00));
-                        totalPrice += (user.product[2] * straighhairPrice) * (1.0 - (cashDiscount / 100.00));
-                    }
+                        totalPrice = priceCalculator(user.product, haircutPrice, dyehairPrice, straighhairPrice, cashDiscount);
                     else if (paymentOption == 2)
-                    {
-                        totalPrice += (user.product[0] * haircutPrice) * (1.0 - (pixDiscount / 100.00));
-                        totalPrice += (user.product[1] * dyehairPrice) * (1.0 - (pixDiscount / 100.00));
-                        totalPrice += (user.product[2] * straighhairPrice) * (1.0 - (pixDiscount / 100.00));
-                    }
+                        totalPrice = priceCalculator(user.product, haircutPrice, dyehairPrice, straighhairPrice, pixDiscount);
                     else if (paymentOption == 3)
-                    {
-                        totalPrice += (user.product[0] * haircutPrice) * (1.0 - (cardDiscount / 100.00));
-                        totalPrice += (user.product[1] * dyehairPrice) * (1.0 - (cardDiscount / 100.00));
-                        totalPrice += (user.product[2] * straighhairPrice) * (1.0 - (cardDiscount / 100.00));
-                    }
+                        totalPrice = priceCalculator(user.product, haircutPrice, dyehairPrice, straighhairPrice, cardDiscount);
 
                     system("@cls||clear");
                     printf("Valor total: %.2lf", totalPrice);
 
-                    do
-                    {
-                        printf("\n[0] - Voltar\n");
-                        scanf("%d", &back);
-                    } while (back != 0);
+                    backScreen();
                 }
             }
             else
-            {
-                system("@cls||clear");
-                printf("Nenhum cliente foi cadastrado!");
-
-                do
-                {
-                    printf("\n[0] - Voltar\n");
-                    scanf("%d", &back);
-                } while (back != 0);
-            }
+                noUser();
         }
 
     } while (esc != 0);
 
     system("@cls||clear");
     draw();
-
-    do
-    {
-        printf("\n[0] - Fechar\n");
-        scanf("%d", &back);
-    } while (back != 0);
+    backScreen();
 }
 
 void draw()
@@ -315,4 +183,76 @@ void draw()
         }
         printf("\n");
     }
+}
+
+priceCalculator(int product[3], double haircutPrice, double dyehairPrice, double straighhairPrice, double discount)
+{
+    double totalPrice;
+
+    totalPrice += (product[0] * haircutPrice) * (1.0 - (discount / 100.00));
+    totalPrice += (product[1] * dyehairPrice) * (1.0 - (discount / 100.00));
+    totalPrice += (product[2] * straighhairPrice) * (1.0 - (discount / 100.00));
+
+    return totalPrice;
+}
+
+void backScreen()
+{
+    int back;
+
+    do
+    {
+        printf("\n[0] - Voltar\n");
+        scanf("%d", &back);
+    } while (back != 0);
+}
+
+int productAdd(int product[3])
+{
+    int add;
+
+    while (add != 0)
+    {
+        system("@cls||clear");
+        printf("Escolha o que fazer no salao: \n");
+        (product[0] == 1) ? printf("[1] Corte (ADICIONADO)\n") : printf("[1] Corte (NAO ADICIONADO)\n");
+        (product[1] == 1) ? printf("[2] Pintura (ADICIONADO)\n") : printf("[2] Pintura (NAO ADICIONADO)\n");
+        (product[2] == 1) ? printf("[3] Alisamento (ADICIONADO)\n\n") : printf("[3] Alisamento (NAO ADICIONADO)\n\n");
+        printf("[0] Continuar\n");
+
+        scanf("%d", &add);
+
+        if (add == 1)
+            if (product[0] == 1)
+                product[0] = 0;
+            else
+                product[0] = 1;
+
+        else if (add == 2)
+            if (product[1] == 1)
+                product[1] = 0;
+            else
+                product[1] = 1;
+
+        else if (add == 3)
+            if (product[2] == 1)
+                product[2] = 0;
+            else
+                product[2] = 1;
+    }
+    return product[3];
+}
+
+void noUser()
+{
+    system("@cls||clear");
+    printf("Nenhum cliente foi cadastrado!");
+
+    int back;
+
+    do
+    {
+        printf("\n[0] - Voltar\n");
+        scanf("%d", &back);
+    } while (back != 0);
 }
