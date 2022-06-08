@@ -14,13 +14,13 @@ int main()
     int
         num;
 
-    Teste[1].valor1 = 5;
-    Teste[1].valor2 = 8;
-    Teste[1].valor3 = 15;
+    Teste[0].valor1 = 5;
+    Teste[0].valor2 = 8;
+    Teste[0].valor3 = 15;
 
-    Teste[2].valor1 = 848;
-    Teste[2].valor2 = 995;
-    Teste[2].valor3 = 105;
+    Teste[1].valor1 = 848;
+    Teste[1].valor2 = 995;
+    Teste[1].valor3 = 105;
 
     printf("Insira um valor:");
     scanf("%d", &num);
