@@ -17,11 +17,12 @@ matricula - saída do programa. */
 
 void main()
 {
-    int userMat[5],
+    int userMat[6],
+        lastDigit,
         esc;
 
     printf("Insira a sua matricula: ");
-    scanf("%01d%01d%01d%01d%01d", &userMat[0], &userMat[1], &userMat[2], &userMat[3], &userMat[4]);
+    scanf("%01d%01d%01d%01d%01d%d", &userMat[0], &userMat[1], &userMat[2], &userMat[3], &userMat[4], &userMat[5]);
     fseek(stdin,0,SEEK_END);
 
     printf("|| Escolha ||\n\n");
@@ -33,14 +34,16 @@ void main()
 
     scanf("%d", &esc);
 
+    lastDigit = userMat[5] % 10;
+
     if (esc == userMat[3])
-        printf("%d + %d = %d", userMat[0], userMat[4], userMat[0] + userMat[4]);
+        printf("%d + %d = %d", userMat[0], lastDigit, userMat[0] + lastDigit);
     else if (esc == userMat[1])
-        printf("%d - %d = %d", userMat[0], userMat[4], userMat[0] - userMat[4]);
+        printf("%d - %d = %d", userMat[0], lastDigit, userMat[0] - lastDigit);
     else if (esc == userMat[4])
-        printf("%d * %d = %d", userMat[0], userMat[4], userMat[0] * userMat[4]);
+        printf("%d * %d = %d", userMat[0], lastDigit, userMat[0] * lastDigit);
     else if (esc == userMat[2])
-        printf("%d / %d = %d", userMat[0], userMat[4], userMat[0] / userMat[4]);
+        printf("%d / %d = %d", userMat[0], lastDigit, userMat[0] / lastDigit);
     else
         printf("Programa encerrado!");
 }
