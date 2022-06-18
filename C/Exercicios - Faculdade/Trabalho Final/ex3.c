@@ -15,6 +15,19 @@ matricula - faça uma divisão.
 • Se o usuário digitar um número igual o primeiro número de sua
 matricula - saída do programa. */
 
+/*
+    variável = matricula
+    ////
+    apresentsar um menu
+    opções vai calcular (primeiro e o ultimo digito da matricula)
+    escolha do usuario == (4º posição = adição) 
+    escolha do usuario == (2º posição = subtração) 
+    escolha do usuario == (5º posição = multiplicação) 
+    escolha do usuario == (3º posição = divisão) 
+
+    escolha do usuario == (1º posição = encerrar) 
+*/
+
 void main()
 {
     int userMat[6],
