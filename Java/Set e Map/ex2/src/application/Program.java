@@ -17,7 +17,13 @@ public class Program {
             String line = br.readLine();
             while (line != null) {
                 String[] value = line.split(",");
-                votes.put(value[0], Integer.parseInt(value[1]));
+                if (votes.get(value[0]) != null) {
+                    int valueAdd = Integer.parseInt(value[1]) + votes.get(value[0]);
+                    votes.put(value[0], valueAdd);
+                } else {
+                    votes.put(value[0], Integer.parseInt(value[1]));
+                }
+                line = br.readLine();
             }
 
             for (String name : votes.keySet()) {
