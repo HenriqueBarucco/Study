@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Main">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Main">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
    <children>
-      <Button layoutX="173.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #714471;" text="Botão bonito" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
-      <Label layoutX="104.0" layoutY="90.0" nodeOrientation="RIGHT_TO_LEFT" text="Finalmente deu certo" textAlignment="CENTER">
-         <font>
-            <Font size="42.0" />
-         </font>
-      </Label>
+      <Label text="Mais um teste" />
+      <Button mnemonicParsing="false" text="Clique para ver o que o peixe faz" />
+      <ProgressIndicator progress="$controller" />
+      <ColorPicker editable="true" />
    </children>
-</AnchorPane>
+</VBox>
