@@ -2,19 +2,15 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.Main">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.ViewController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <Label text="Mais um teste" />
-      <Button mnemonicParsing="false" text="Clique para ver o que o peixe faz" />
-      <ProgressIndicator progress="0.0" />
-      <ColorPicker editable="true" />
+      <Label text="Clique no botão" />
+      <Button fx:id="btTest" mnemonicParsing="false" onAction="#onBtTestAction" text="Clique aqui!" />
    </children>
 </VBox>
