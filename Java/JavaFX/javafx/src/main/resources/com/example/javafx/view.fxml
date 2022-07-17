@@ -14,7 +14,7 @@
    <children>
       <Label text="Mais um teste" />
       <Button mnemonicParsing="false" text="Clique para ver o que o peixe faz" />
-      <ProgressIndicator progress="$controller" />
+      <ProgressIndicator progress="0.0" />
       <ColorPicker editable="true" />
    </children>
 </VBox>
