@@ -76,15 +76,29 @@ void printList(Lista *lista) {
    }
 }
 
+void addTask(Lista *lista) {
+    char nameTask[100], descTask[500];
+
+    printf("Insira uma tarefa:\n ");
+    printf("Nome: ");
+    scanf("%s", &nameTask);
+    printf("Descricao: ");
+    scanf("%s", &descTask);
+
+    inserir(lista, (lista->ultima->prox->id + 111), nameTask, descTask);
+}
+
 int main()
 {
     Lista *l = criarLista();
     inserir(l, 111, "Tarefa 1", "Pesquisar o que e lista em C");
     inserir(l, 222, "Tarefa 2", "Estudar exemplos de lista");
     inserir(l, 333, "Tarefa 3", "Criar um exemplo");
-    remover(l);
+    //remover(l);
 
-    printList(l); // Função desenvolvida para imprimir a lista
+    printList(l);
+    addTask(l); // Função desenvolvida para inserir tarefa
+    printList(l); 
 
     return 0;
 }
