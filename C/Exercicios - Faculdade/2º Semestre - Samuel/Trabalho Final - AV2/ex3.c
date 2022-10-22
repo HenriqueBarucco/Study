@@ -64,19 +64,18 @@ void remover(Agenda *agenda)
     int idRemove;
     system("cls");
     printf((agenda->primeira == NULL) ? "Voce nao possui nenhum contato!\n" : "Insira o id que deseja remover:\n");
-    scanf("%d", &idRemove);
-    struct Agenda *tmp = agenda;
-    if (agenda->primeira->id != idRemove && agenda->primeira != NULL)
+    if (agenda->primeira != NULL)
     {
-        while (tmp->primeira->prox->id != idRemove)
-            tmp->primeira = tmp->primeira->prox;
-        tmp->primeira->prox = tmp->primeira->prox->prox;
+        scanf("%d", &idRemove);
+        struct Agenda *tmp = agenda;
+        if (agenda->primeira->id != idRemove && agenda->primeira != NULL)
+        {
+            while (tmp->primeira->prox->id != idRemove)
+                tmp->primeira = tmp->primeira->prox;
+            tmp->primeira->prox = tmp->primeira->prox->prox;
+        }
     }
     back();
-
-    /*     lista->primeira = lista->primeira->prox;
-    if (lista->primeira == NULL)
-        lista->ultima = NULL; */
 }
 
 void printList(Agenda *agenda)
