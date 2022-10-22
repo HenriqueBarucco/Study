@@ -18,8 +18,6 @@ struct Lista
 typedef struct Tarefa Tarefa;
 typedef struct Lista Lista;
 
-struct Tarefa *head = NULL;
-
 Tarefa *criarTarefa(int id, char nome[100], char descricao[100])
 {
     Tarefa *tarefa = (Tarefa *)malloc(sizeof(Tarefa));
@@ -79,7 +77,7 @@ void printList(Lista *lista) {
 void addTask(Lista *lista) {
     char nameTask[100], descTask[500];
 
-    printf("Insira uma tarefa:\n ");
+    printf("Insira uma tarefa:\n");
     printf("Nome: ");
     scanf("%s", &nameTask);
     printf("Descricao: ");
