@@ -29,16 +29,19 @@ public class Pagamento {
     private BigDecimal valor;
 
     @NotBlank
-    @Size(max = 100)
+    @Size(max=100)
     private String nome;
 
-    @Size(max = 19)
+    @NotBlank
+    @Size(max=19)
     private String numero;
 
-    @Size(max = 7)
+    @NotBlank
+    @Size(max=7)
     private String expiracao;
 
-    @Size(min = 3, max = 3)
+    @NotBlank
+    @Size(min=3, max=3)
     private String codigo;
 
     @NotNull
@@ -50,4 +53,6 @@ public class Pagamento {
 
     @NotNull
     private Long formaDePagamentoId;
+
+
 }
