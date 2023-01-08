@@ -1,18 +1,15 @@
 package main
 
 import (
+	"banco/clientes"
 	"banco/contas"
 	"fmt"
 )
 
 func main() {
-	contaDaSilvia := contas.ContaCorrente{Titular: "Silvia", Saldo: 300}
-	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 100}
+	clienteHenrique := clientes.Titular{Nome: "Henrique", CPF: "123.123.123.12", Profissao: "Desenvolvedor"}
+	contaDoHenrique := contas.ContaCorrente{Titular: clienteHenrique, NumeroAgencia: 123, NumeroConta: 1234}
 
-	status := contaDaSilvia.Transferir(200, &contaDoGustavo)
-
-	fmt.Println(status)
-
-	fmt.Println(contaDaSilvia)
-	fmt.Println(contaDoGustavo)
+	contaDoHenrique.Depositar(1000)
+	fmt.Println(contaDoHenrique.ObterSaldo())
 }
