@@ -4,7 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const monitoramentos = 5
+const delay = 5
 
 func main() {
 
@@ -45,8 +49,8 @@ func leComando() int {
 	var command int
 	fmt.Scan(&command)
 
-	fmt.Println("O endereço da variavel command é", &command)
 	fmt.Println("O comando escolhido foi", command)
+	fmt.Println("")
 
 	return command
 }
@@ -54,7 +58,23 @@ func leComando() int {
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
 
-	site := "https://www.alura.com.br/"
+	sites := []string{"https://www.alura.com.br/", "https://www.google.com.br/", "https://www.henriquebarucco.com.br/"}
+
+	fmt.Println(sites)
+
+	for i := 0; i < monitoramentos; i++ {
+		for i, site := range sites {
+			fmt.Println("Testando site", i, ":", site)
+			testaSite(site)
+		}
+		time.Sleep(delay * time.Second)
+		fmt.Println("")
+	}
+
+	fmt.Println("")
+}
+
+func testaSite(site string) {
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
