@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package contas
 
 type ContaCorrente struct {
 	titular       string
@@ -28,18 +26,12 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
 	}
 }
 
-func main() {
-	contaDaSilvia := ContaCorrente{}
-	contaDaSilvia.titular = "Silvia"
-	contaDaSilvia.saldo = 500
-
-	fmt.Println(contaDaSilvia.saldo)
-
-	fmt.Println(contaDaSilvia.Sacar(200))
-
-	fmt.Println(contaDaSilvia.saldo)
-
-	status, valor := contaDaSilvia.Depositar(500)
-
-	fmt.Println(status, valor)
+func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *ContaCorrente) bool {
+	if valorDaTransferencia < c.saldo && valorDaTransferencia > 0 {
+		c.saldo -= valorDaTransferencia
+		contaDestino.Depositar(valorDaTransferencia)
+		return true
+	} else {
+		return false
+	}
 }
