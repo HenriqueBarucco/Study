@@ -1,0 +1,15 @@
+08/01/2023 17:12:59 - https://www.alura.com.br/ - online: true
+08/01/2023 17:13:00 - https://www.google.com.br/ - online: true
+08/01/2023 17:13:00 - https://www.henriquebarucco.com.br/ - online: true
+08/01/2023 17:13:05 - https://www.alura.com.br/ - online: true
+08/01/2023 17:13:05 - https://www.google.com.br/ - online: true
+08/01/2023 17:13:05 - https://www.henriquebarucco.com.br/ - online: true
+08/01/2023 17:13:10 - https://www.alura.com.br/ - online: true
+08/01/2023 17:13:10 - https://www.google.com.br/ - online: true
+08/01/2023 17:13:10 - https://www.henriquebarucco.com.br/ - online: true
+08/01/2023 17:13:15 - https://www.alura.com.br/ - online: true
+08/01/2023 17:13:16 - https://www.google.com.br/ - online: true
+08/01/2023 17:13:16 - https://www.henriquebarucco.com.br/ - online: true
+08/01/2023 17:13:21 - https://www.alura.com.br/ - online: true
+08/01/2023 17:13:21 - https://www.google.com.br/ - online: true
+08/01/2023 17:13:21 - https://www.henriquebarucco.com.br/ - online: true
