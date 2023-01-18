@@ -28,3 +28,4 @@ out/
 .code-workspace
 
 *.lnk
+Golang/src/github.com/go-sql-driver/mysql/
