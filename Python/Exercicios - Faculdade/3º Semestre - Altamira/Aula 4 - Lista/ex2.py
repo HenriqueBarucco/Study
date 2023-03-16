@@ -1,31 +1,13 @@
 number = []
-i = int()
 
-maior = int()
-menor = int()
+i = int()
 
 while i in range(0, 10):
     valor = int(input("Escolha um numero: "))
     number.append(valor)
-
-    if menor == 0:
-        menor = valor
-
-    if valor > maior:
-        maior = valor
-    if valor < menor:
-        menor = valor
-
     i += 1
 
-soma = int()
-for x in number:
-    soma += x
-    i += 1
-
-media = soma/10
-
-print("Soma dos numeros: ", soma)
-print("Média dos numeros: ", media)
-print("O maior numero: ", maior)
-print("O menor numero: ", menor)
+print("Soma dos numeros: ", sum(number))
+print("Média dos numeros: ", sum(number)/10)
+print("O maior numero: ", max(number))
+print("O menor numero: ", min(number))
