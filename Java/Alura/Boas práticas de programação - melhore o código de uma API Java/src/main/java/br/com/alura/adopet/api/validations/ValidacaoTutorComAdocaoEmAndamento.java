@@ -1,7 +1,7 @@
 package br.com.alura.adopet.api.validations;
 
 import br.com.alura.adopet.api.dto.SolicitacaoAdocaoDto;
-import br.com.alura.adopet.api.exception.ValidacaoException;
+import br.com.alura.adopet.api.excpetion.ValidacaoException;
 import br.com.alura.adopet.api.model.Adocao;
 import br.com.alura.adopet.api.model.StatusAdocao;
 import br.com.alura.adopet.api.model.Tutor;
@@ -30,4 +30,5 @@ public class ValidacaoTutorComAdocaoEmAndamento implements ValidacaoSolicitacaoA
             }
         }
     }
+
 }

@@ -19,4 +19,5 @@ public class EmailService {
         email.setText(message);
         emailSender.send(email);
     }
+
 }
