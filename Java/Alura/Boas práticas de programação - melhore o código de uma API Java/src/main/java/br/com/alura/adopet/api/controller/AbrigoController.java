@@ -4,7 +4,7 @@ import br.com.alura.adopet.api.dto.AbrigoDto;
 import br.com.alura.adopet.api.dto.CadastroAbrigoDto;
 import br.com.alura.adopet.api.dto.CadastroPetDto;
 import br.com.alura.adopet.api.dto.PetDto;
-import br.com.alura.adopet.api.excpetion.ValidacaoException;
+import br.com.alura.adopet.api.exception.ValidacaoException;
 import br.com.alura.adopet.api.model.Abrigo;
 import br.com.alura.adopet.api.service.AbrigoService;
 import br.com.alura.adopet.api.service.PetService;

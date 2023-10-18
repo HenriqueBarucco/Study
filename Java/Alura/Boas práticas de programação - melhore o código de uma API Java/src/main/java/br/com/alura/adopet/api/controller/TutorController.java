@@ -2,7 +2,7 @@ package br.com.alura.adopet.api.controller;
 
 import br.com.alura.adopet.api.dto.AtualizacaoTutorDto;
 import br.com.alura.adopet.api.dto.CadastroTutorDto;
-import br.com.alura.adopet.api.excpetion.ValidacaoException;
+import br.com.alura.adopet.api.exception.ValidacaoException;
 import br.com.alura.adopet.api.service.TutorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
