@@ -9,55 +9,62 @@ import br.com.alura.adopet.api.model.TipoPet;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 class CalculadoraProbabilidadeAdocaoTest {
 
     @Test
-    void deveriaRetornarProbabilidadeAltaParaPetComPesoBaixoEIdadeBaixa() {
-        // idade 4 anos e 4kg
+    void deveriaRetornarProbabilidadeAltaParaPetComIdadeBaixaEPesoBaixo(){
+        //idade 4 anos e 4kg - ALTA
 
+        //ARRANGE
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
-                "Abrigo 1",
-                "5516990000000",
-                "henrique@email.com"
+                "Abrigo feliz",
+                "94999999999",
+                "abrigofeliz@email.com.br"
         ));
-
         Pet pet = new Pet(new CadastroPetDto(
                 TipoPet.GATO,
-                "Gato 1",
+                "Miau",
                 "Siames",
                 4,
-                "Branco",
+                "Cinza",
                 4.0f
         ), abrigo);
-
         CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
-        ProbabilidadeAdocao probabilidadeAdocao = calculadora.calcular(pet);
 
-        Assertions.assertEquals(ProbabilidadeAdocao.ALTA, probabilidadeAdocao);
+        //ACT
+        ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
+
+        //ASSERT
+        Assertions.assertEquals(ProbabilidadeAdocao.ALTA,probabilidade);
     }
 
     @Test
-    void deveriaRetornarProbabilidadeMediaParaPetComPesoBaixoEIdadeAlta() {
-        // idade 15 anos e 4kg
+    void deveriaRetornarProbabilidadeMediaParaPetComIdadeAltaEPesoBaixo(){
+        //idade 15 anos e 4kg - MEDIA
 
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
-                "Abrigo 1",
-                "5516990000000",
-                "henrique@email.com"
+                "Abrigo feliz",
+                "94999999999",
+                "abrigofeliz@email.com.br"
         ));
-
         Pet pet = new Pet(new CadastroPetDto(
                 TipoPet.GATO,
-                "Gato 1",
+                "Miau",
                 "Siames",
                 15,
-                "Branco",
+                "Cinza",
                 4.0f
         ), abrigo);
-
         CalculadoraProbabilidadeAdocao calculadora = new CalculadoraProbabilidadeAdocao();
-        ProbabilidadeAdocao probabilidadeAdocao = calculadora.calcular(pet);
 
-        Assertions.assertEquals(ProbabilidadeAdocao.MEDIA, probabilidadeAdocao);
+
+        ProbabilidadeAdocao probabilidade = calculadora.calcular(pet);
+
+        Assertions.assertEquals(ProbabilidadeAdocao.MEDIA,probabilidade);
     }
+
+
+
 }
