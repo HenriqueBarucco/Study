@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class CalculadoraProbabilidadeAdocaoTest {
 
     @Test
-    void cenario01() {
+    void deveriaRetornarProbabilidadeAltaParaPetComPesoBaixoEIdadeBaixa() {
         // idade 4 anos e 4kg
 
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
@@ -37,7 +37,7 @@ class CalculadoraProbabilidadeAdocaoTest {
     }
 
     @Test
-    void cenario02() {
+    void deveriaRetornarProbabilidadeMediaParaPetComPesoBaixoEIdadeAlta() {
         // idade 15 anos e 4kg
 
         Abrigo abrigo = new Abrigo(new CadastroAbrigoDto(
