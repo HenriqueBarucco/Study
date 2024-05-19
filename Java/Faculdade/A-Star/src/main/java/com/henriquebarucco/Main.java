@@ -79,7 +79,7 @@ class Graph {
 }
 
 class AStar {
-    public static List<Node> findPath(Graph graph, Node start, Node goal) {
+    public static List<Node> findPath(Node start, Node goal) {
         if (start == null || goal == null) return null;
 
         PriorityQueue<Node> openSet = new PriorityQueue<>();
@@ -147,7 +147,7 @@ class AStar {
         Node start = graph.getNode(0, 0);
         Node goal = graph.getNode(4, 4);
 
-        List<Node> path = findPath(graph, start, goal);
+        List<Node> path = findPath(start, goal);
 
         if (path != null) {
             for (Node node : path) {
