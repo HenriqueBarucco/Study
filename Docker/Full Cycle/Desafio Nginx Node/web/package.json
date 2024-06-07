@@ -1,0 +1,17 @@
+{
+  "name": "fullcycle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Henrique Barucco",
+  "license": "ISC",
+  "dependencies": {
+    "doctor-who": "^1.1.1",
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0"
+  }
+}
